@@ -1,0 +1,55 @@
+{
+    "actions": [
+      {
+        "description": "Default Welcome Intent",
+        "name": "MAIN",
+        "fulfillment": {
+            "conversationName": "Default Hello"
+        },
+        "intent": {
+          "name": "actions.intent.MAIN"
+        }
+      },
+      {
+          "description": "Show Cafeteria",
+          "name": "Show Cafe",
+          "fulfillment": {
+            "conversationName": "Show Cafe"
+        },
+          "intent": {
+              "name": "com.huformation.ShowCafe",
+              "parameters": [
+                  {
+                      "name": "cafeteria",
+                      "type": "org.schema.type.Text"
+                  },
+                  {
+                      "name": "day",
+                      "type": "org.schema.type.Text"
+                  }
+              ],
+              "trigger": {
+                  "queryPatterns": [
+                      "$org.schema.type.Text:cafeteria 메뉴 알려줘",
+                      "$org.schema.type.Text:day $org.schema.type.Text:cafeteria 알려줘"
+                  ]
+              }
+          }
+      }
+    ],
+    "conversations": {
+      "Default Hello": {
+        "name": "Default Hello",
+        "url": "https://myserver.aaronroh.org/fulfillment",
+        "fulfillmentApiVersion": 2
+      },
+      "Show CAFE": {
+        "name": "Show Cafe",
+        "url": "https://myserver.aaronroh.org/fulfillment",
+        "fulfillmentApiVersion": 2
+      }
+      
+    },
+    "locale": "ko-KR",
+    "locale": "ko"
+  }

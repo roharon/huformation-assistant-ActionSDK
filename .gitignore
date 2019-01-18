@@ -171,3 +171,5 @@ typings/
 
 # FuseBox cache
 .fusebox/
+creds.data
+gactions.exe
