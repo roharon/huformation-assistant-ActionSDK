@@ -1,3 +1,6 @@
+# my optional
+.ssl/
+
 # Logs
 logs
 *.log
