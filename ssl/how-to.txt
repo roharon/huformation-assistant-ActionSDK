@@ -1,0 +1,16 @@
+This is command for generate key.
+
+openssl genrsa 1024 > key.pem
+
+
+------
+
+
+This is command for Cert(certification) 
+
+openssl req -x509 -new -key key.pem > cert.pem
+
+
+
+
+

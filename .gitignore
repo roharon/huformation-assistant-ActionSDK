@@ -1,5 +1,5 @@
 # my optional
-.ssl/
+ssl/*.pem
 
 # Logs
 logs
@@ -176,3 +176,5 @@ typings/
 .fusebox/
 creds.data
 gactions.exe
+ssl/key.pem
+ssl/cert.pem
