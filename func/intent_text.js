@@ -6,12 +6,14 @@ module.exports = (conv, input) => {
     conv.ask(input)
 
     if(input == '글로벌캠퍼스'){
+        conv.user.storage.campus = 'global'
         conv.ask(caf.GLOBAL_CAFE)
     }
     else if(input == '서울캠퍼스'){
+        conv.user.storage.campus = 'seoul'
         conv.ask(caf.SEOUL_CAFE)
     }
-    else if(input == '처음으로'){
+    else if(input == '처음으로' || input =='캠퍼스 변경'){
         conv.ask(caf.CAMPUS)
     }
     else if(caf.ALLCAFE.includes(input)){

@@ -27,6 +27,7 @@ app.intent('actions.intent.MAIN', (conv) => {
 
 app.intent('actions.intent.TEXT', (conv, input) => {
     intent_TEXT(conv, input)
+    
 });
 
 app.intent('com.huformation.ShowCafe', (conv, {cafe_name}) => {
