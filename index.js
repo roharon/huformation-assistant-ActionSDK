@@ -35,6 +35,10 @@ app.intent('com.huformation.ShowCafe', (conv, {cafe_name}) => {
     console.log(conv)
 })
 
+app.intent('actions.intent.CANCEL', (conv) => {
+    conv.close('외대학식을 종료합니다')
+})
+
 expressApp.post('/fulfillment', app)
 /*
 

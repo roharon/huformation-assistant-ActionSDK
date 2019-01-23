@@ -3,7 +3,6 @@ const caf = require('./var.js')
 // load Suggestions Button
 
 module.exports = (conv, input) => {
-    conv.ask(input)
 
     if(input == '글로벌캠퍼스'){
         conv.user.storage.campus = 'global'
@@ -17,8 +16,9 @@ module.exports = (conv, input) => {
         conv.ask(caf.CAMPUS)
     }
     else if(caf.ALLCAFE.includes(input)){
+        conv.ask(input + " 메뉴를 알려드리겠습니다.")
         conv.ask(new Table({
-            title: '${input} 메뉴',
+            title: input + ' 메뉴',
             subtitle: '<오늘 날짜>',
             image: new Image({
               url: 'https://user-images.githubusercontent.com/4939738/51440015-3c95c100-1d05-11e9-8f86-30c5ccd0b45f.jpg',
@@ -65,10 +65,17 @@ module.exports = (conv, input) => {
               url: 'https://info.aaronroh.org'
             }),
           }))
-
-          conv.ask(caf.CAMPUS)
+          
+          if (conv.user.storage.campus == 'global') {
+            conv.ask(caf.GLOBAL_CAFE)
+          }
+          else {
+            conv.ask(caf.SEOUL_CAFE)
+          }
+          
     }
-    else{
+    else {
+        conv.ask("지원하지 않는 명령입니다")
         conv.ask(caf.CAMPUS)
     }
     console.log(input)
