@@ -1,4 +1,4 @@
-const {SimpleResponse, Suggestions} = require('actions-on-google');
+const {Permission, SimpleResponse, Suggestions} = require('actions-on-google');
 const caf = require('./var.js');
 
 // Show button (SEOUL, GLOBAL)
@@ -7,14 +7,14 @@ const caf = require('./var.js');
 module.exports = (conv) => {
     var sugg;
     var ssml;
-    if(conv.user.last.seen) {
+    const name = conv.user.storage.userName;
+
+    if(name) {
         ssml = '<speak>' +
         "<p><s>안녕하세요." 
-        + conv.user.profile.given_name + "님</s>"
+        + name + "님</s>"
         + "<s>원하시는 식당을 선택해주세요</s>"
         + "</p> </speak>";
-        //conv.user.profile.given_name 미해결.
-        // undefined로 출력됨. 추후 수정 필요
 
         if(conv.user.storage.campus == 'seoul'){
             sugg = caf.SEOUL_CAFE
@@ -27,13 +27,16 @@ module.exports = (conv) => {
         }   
     }
     else {
-        ssml = '<speak>' + "<p><s>안녕하세요."
-        + conv.user.profile.given_name
-        + "님</s>"
+        ssml = '<speak> <p>' +
         + "<s>원하시는 캠퍼스를 말씀해주세요.</s>"
         + "</p> </speak>";
 
         sugg = caf.CAMPUS
+
+        conv.ask(new Permission({
+            context: '이름의 권한이 필요합니다',
+            permissions: 'NAME',
+          }));
     }
     
     // 캠퍼스 분류 후, 수정예정

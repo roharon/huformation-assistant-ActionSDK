@@ -16,6 +16,7 @@ const app = actionssdk({debug: true});
 
 const intent_MAIN = require('./func/intent_main.js');
 const intent_TEXT = require('./func/intent_text.js')
+const caf = require('./func/var')
 
 https.createServer(options, expressApp).listen(port2, function(){  
     console.log("Https server listening on port " + port2);
@@ -25,19 +26,24 @@ app.intent('actions.intent.MAIN', (conv) => {
     intent_MAIN(conv);
 });
 
-app.intent('actions.intent.TEXT', (conv, input) => {
-    intent_TEXT(conv, input)
-    
-});
-
 app.intent('com.huformation.ShowCafe', (conv, {cafe_name}) => {
     conv.ask('${cafe_name} 입니다.')
     console.log(conv)
 })
 
+app.intent('actions.intent.TEXT', (conv, input) => {
+    intent_TEXT(conv, input)
+    
+});
+
 app.intent('actions.intent.CANCEL', (conv) => {
     conv.close('외대학식을 종료합니다')
-})
+});
+
+app.intent('actions.intent.PERMISSION', (conv) => {
+    conv.user.storage.userName = conv.user.raw.profile.displayName    
+    intent_MAIN(conv);
+});
 
 expressApp.post('/fulfillment', app)
 /*

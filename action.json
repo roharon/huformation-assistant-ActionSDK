@@ -6,7 +6,7 @@
         "fulfillment": {
             "conversationName": "Default Hello"
         },
-        "intent": {
+        "intent": { 
           "name": "actions.intent.MAIN"
         }
       },
@@ -21,21 +21,70 @@
               "parameters": [
                   {
                       "name": "cafeteria",
-                      "type": "org.schema.type.Text"
+                      "type": "Cafe"
                   },
                   {
                       "name": "day",
-                      "type": "org.schema.type.Text"
+                      "type": "Day"
                   }
               ],
               "trigger": {
                   "queryPatterns": [
-                      "$org.schema.type.Text:cafeteria 메뉴 알려줘",
-                      "$org.schema.type.Text:day $org.schema.type.Text:cafeteria 알려줘"
+                      "hello",
+                      "안녕",
+                      "$Cafe:cafeteria 메뉴 알려줘",
+                      "$Day:day $Cafe:cafeteria 알려줘"
                   ]
               }
           }
       }
+    ],
+    "types": [
+        {
+            "name": "$Cafe",
+            "entities": [
+                {
+                    "key": "후생관",
+                    "synonyms": [
+                        "후식",
+                        "공대",
+                        "후생"
+                    ]
+                },
+                {
+                    "key": "어문관",
+                    "synonyms": [
+                        "어문",
+                        "어식"
+                    ]
+                }
+            ]
+
+        },
+        {
+            "name": "$Day",
+            "entities": [
+                {
+                    "key": "오늘",
+                    "synonyms": [
+                        "당일",
+                        "지금",
+                        "올",
+                        "오늘자"
+                    ]
+                },
+                {
+                    "key": "내일",
+                    "synonyms": [
+                        "다음날",
+                        "담날",
+                        "일어나면",
+                        "낼",
+                        "내일자"
+                    ]
+                }
+            ]
+        }
     ],
     "conversations": {
       "Default Hello": {
@@ -43,12 +92,13 @@
         "url": "https://myserver.aaronroh.org/fulfillment",
         "fulfillmentApiVersion": 2
       },
-      "Show CAFE": {
+      "Show Cafe": {
         "name": "Show Cafe",
         "url": "https://myserver.aaronroh.org/fulfillment",
         "fulfillmentApiVersion": 2
       }
       
     },
-    "locale": "ko-KR"
+    "locale": "ko-KR",
+    "locale": "ko"
   }
