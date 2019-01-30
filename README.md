@@ -1,7 +1,11 @@
 # huformation-google-assistant
-![status](https://img.shields.io/badge/Status-In%20progress-red.svg)
+![status](https://img.shields.io/badge/Status-Stop-red.svg)
 > This is Huformation(HUFS cafeteria menu service) based on Google Assistant
 
+### Not in progress.
+
+> cause some fulfillment problem.
+> So changed to based on dialogFlow
 
 
 Proto Type Image
