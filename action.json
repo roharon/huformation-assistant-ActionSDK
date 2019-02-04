@@ -7,7 +7,26 @@
             "conversationName": "Default fulfillment"
         },
         "intent": { 
-          "name": "actions.intent.MAIN"
+          "name": "actions.intent.MAIN",
+          "parameters": [
+            {
+                "name": "cafeteria",
+                "type": "Cafe"
+            },
+            {
+                "name": "day",
+                "type": "Day"
+            }
+        ],
+        "trigger": {
+            "queryPatterns": [
+                "$Cafe:cafeteria 메뉴 알려줘",
+                "$Day:day $Cafe:cafeteria 알려줘",
+                "$Cafe:cafeteria 메뉴 물어보기",
+                "$Cafe:cafeteria 메뉴 물어볼래"
+
+            ]
+        }
         }
       },
       {
@@ -34,7 +53,9 @@
                       "안녕",
                       "$Cafe:cafeteria 메뉴 알려줘",
                       "$Day:day $Cafe:cafeteria 알려줘",
-                      "$Cafe:cafeteria 메뉴 물어보기"
+                      "$Cafe:cafeteria 메뉴 물어보기",
+                      "$Cafe:cafeteria 메뉴 물어볼래"
+
                   ]
               }
           }
