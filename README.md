@@ -1,7 +1,15 @@
 # huformation-google-assistant
 <<<<<<< HEAD
+<<<<<<< HEAD
 ![status](https://img.shields.io/badge/Status-In progress-green.svg)
 HUFS cafeteria's Google Assistant third-party service.
+=======
+
+![status](https://img.shields.io/badge/Status-In_progress-green.svg) ![status](https://img.shields.io/badge/language-Node_js-blue.svg)
+
+
+> This is Huformation(HUFS cafeteria menu service) based on Google Assistant Action SDK
+>>>>>>> 64e5ece63ebac12ef2547d8d412a8bfe99364b2d
 
 # Motivation
 There is no HUFS Assistant third-party service. 
