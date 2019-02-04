@@ -4,7 +4,7 @@
         "description": "Default Welcome Intent",
         "name": "MAIN",
         "fulfillment": {
-            "conversationName": "Default Hello"
+            "conversationName": "Default fulfillment"
         },
         "intent": { 
           "name": "actions.intent.MAIN"
@@ -14,7 +14,7 @@
           "description": "Show Cafeteria",
           "name": "Show Cafe",
           "fulfillment": {
-            "conversationName": "Show Cafe"
+            "conversationName": "Default fulfillment"
         },
           "intent": {
               "name": "com.huformation.ShowCafe",
@@ -37,6 +37,10 @@
                   ]
               }
           }
+      },
+      {
+          "description": "test number",
+          "name": ""
       }
     ],
     "types": [
@@ -87,17 +91,11 @@
         }
     ],
     "conversations": {
-      "Default Hello": {
-        "name": "Default Hello",
-        "url": "https://myserver.aaronroh.org/fulfillment",
-        "fulfillmentApiVersion": 2
-      },
-      "Show Cafe": {
-        "name": "Show Cafe",
+      "Default fulfillment": {
+        "name": "Default fulfillment",
         "url": "https://myserver.aaronroh.org/fulfillment",
         "fulfillmentApiVersion": 2
       }
-      
     },
     "locale": "ko-KR",
     "locale": "ko"

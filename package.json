@@ -4,13 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node index.js",
+    "start": "node index.js"
   },
   "author": "Aaron Roh",
   "license": "MIT",
   "dependencies": {
     "actions-on-google": "^2.5.0",
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "charset": "^1.0.1",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4",
+    "iconv-lite": "^0.4.24",
+    "request": "^2.88.0"
   }
 }

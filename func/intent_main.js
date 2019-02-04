@@ -4,15 +4,13 @@ const caf = require('./var.js');
 // Show button (SEOUL, GLOBAL)
 // It will be deleted when DB set-up&connecting is done.
 
-module.exports = (conv) => {
+module.exports = (conv, first=0) => {
     var sugg;
     var ssml;
-    const name = conv.user.storage.userName;
+    const name = conv.user.storage.userName
 
     if(name) {
-        ssml = '<speak>' +
-        "<p><s>안녕하세요." 
-        + name + "님</s>"
+        ssml = '<speak>' + '<p> <s>' + name + '님 </s>'
         + "<s>원하시는 식당을 선택해주세요</s>"
         + "</p> </speak>";
 
@@ -23,7 +21,8 @@ module.exports = (conv) => {
             sugg = caf.GLOBAL_CAFE
         }
         else{
-            sugg = new Suggestions('처음으로')
+            ssml = '원하시는 캠퍼스를 말씀해주세요'
+            conv.ask(caf.CAMPUS)
         }   
     }
     else {

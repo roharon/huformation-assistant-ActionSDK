@@ -11,12 +11,12 @@ var options = {
 }
 var port1 = 3005;
 var port2 = 443;
-const expressApp = express().use(bodyParser.json());
-const app = actionssdk({debug: true});
+const expressApp = express(debug=true).use(bodyParser.json());
+const app = actionssdk();
 
 const intent_MAIN = require('./func/intent_main.js');
-const intent_TEXT = require('./func/intent_text.js')
-const caf = require('./func/var')
+const intent_TEXT = require('./func/intent_text.js');
+const caf = require('./func/var');
 
 https.createServer(options, expressApp).listen(port2, function(){  
     console.log("Https server listening on port " + port2);

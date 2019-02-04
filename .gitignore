@@ -178,3 +178,5 @@ creds.data
 gactions.exe
 ssl/key.pem
 ssl/cert.pem
+package-lock.json
+gactions
