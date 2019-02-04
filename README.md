@@ -1,6 +1,7 @@
 # huformation-google-assistant
 
-![status](https://img.shields.io/badge/Status-In progress-green.svg)
+![status](https://img.shields.io/badge/Status-In_progress-green.svg) ![status](https://img.shields.io/badge/language-Node_js-blue.svg)
+
 
 > This is Huformation(HUFS cafeteria menu service) based on Google Assistant Action SDK
 
