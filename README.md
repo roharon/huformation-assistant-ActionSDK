@@ -1,10 +1,20 @@
 # huformation-google-assistant
+<<<<<<< HEAD
 ![status](https://img.shields.io/badge/Status-In progress-green.svg)
 HUFS cafeteria's Google Assistant third-party service.
 
 # Motivation
 There is no HUFS Assistant third-party service. 
 Also It works on speaker and the other :smile
+=======
+![status](https://img.shields.io/badge/Status-Stop-red.svg)
+> This is Huformation(HUFS cafeteria menu service) based on Google Assistant
+
+### Not in progress.
+
+> cause some fulfillment problem.
+> So changed to based on dialogFlow
+>>>>>>> parent of 7236d90... docs: README edit
 
 
 # Build Status
