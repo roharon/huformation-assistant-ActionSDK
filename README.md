@@ -1,7 +1,5 @@
 # huformation-google-assistant
-![status](https://img.shields.io/badge/Status-In progress-green.svg)
 HUFS cafeteria's Google Assistant third-party service.
-=======
 
 ![status](https://img.shields.io/badge/Status-In_progress-green.svg) ![status](https://img.shields.io/badge/language-Node_js-blue.svg)
 
