@@ -7,14 +7,8 @@ HUFS cafeteria's Google Assistant third-party service. :penguin:
 There is no HUFS Assistant third-party service. 
 Also It works on speaker and the other :smiley:
 
-### Not in progress.
-
-> cause some fulfillment problem.
-> So changed to based on dialogFlow
-
-
 # Build Status
-
+[![Build Status](https://travis-ci.com/roharon/huformation-assistant-ActionSDK.svg?branch=master)](https://travis-ci.com/roharon/huformation-assistant-ActionSDK)
 
 # Screen shots
 ![image](https://user-images.githubusercontent.com/4939738/52205524-ad6ada80-28ba-11e9-8e96-2342a85fe581.png)
