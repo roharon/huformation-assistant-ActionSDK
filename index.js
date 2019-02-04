@@ -5,6 +5,8 @@ const {Suggestions, actionssdk} = require('actions-on-google')
 const https = require('https');
 const fs = require('fs');
 
+const intent_showcafe = require('./func/ShowCafe')
+
 var options = {
     key: fs.readFileSync('./ssl/key.pem'),
     cert: fs.readFileSync('./ssl/cert.pem')
@@ -19,15 +21,17 @@ const intent_TEXT = require('./func/intent_text.js');
 const caf = require('./func/var');
 
 https.createServer(options, expressApp).listen(port2, function(){  
-    console.log("Https server listening on port " + port2);
+    console.log("Https server listening on port " + port2)
   });
 
 app.intent('actions.intent.MAIN', (conv) => {
-    intent_MAIN(conv);
+    intent_MAIN(conv)
 });
 
 app.intent('com.huformation.ShowCafe', (conv, {cafe_name}) => {
-    conv.ask('${cafe_name} 입니다.')
+    // invocation에서 동작함.
+    // '외대학식에게 후생관 메뉴 물어보기'
+    intent_showcafe(conv)
     console.log(conv)
 })
 
