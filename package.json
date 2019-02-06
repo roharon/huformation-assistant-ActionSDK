@@ -11,11 +11,13 @@
   "license": "MIT",
   "dependencies": {
     "actions-on-google": "^2.5.0",
+    "async": "^2.6.1",
     "body-parser": "^1.18.3",
     "charset": "^1.0.1",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.4",
     "iconv-lite": "^0.4.24",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "sync-request": "^6.0.0"
   }
 }
