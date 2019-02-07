@@ -31,8 +31,8 @@ app.intent('actions.intent.MAIN', (conv) => {
 app.intent('com.huformation.ShowCafe', (conv, {cafe_name}) => {
     // invocation에서 동작함.
     // '외대학식에게 후생관 메뉴 물어보기'
+    console.log('invocation 동작')
     intent_showcafe(conv)
-    console.log(conv)
 })
 
 app.intent('actions.intent.TEXT', (conv, input) => {

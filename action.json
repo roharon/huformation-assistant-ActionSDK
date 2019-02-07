@@ -20,10 +20,8 @@
         ],
         "trigger": {
             "queryPatterns": [
-                "$Cafe:cafeteria 메뉴 알려줘",
-                "$Day:day $Cafe:cafeteria 알려줘",
-                "$Cafe:cafeteria 메뉴 물어보기",
-                "$Cafe:cafeteria 메뉴 물어볼래"
+                "$Day:day $Cafe:cafeteria",
+                "$Cafe:cafeteria"
 
             ]
         }

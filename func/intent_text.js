@@ -2,6 +2,7 @@ const {Image, Table, Button, Suggestions} = require('actions-on-google');
 
 const caf = require('./var');
 const intent_MAIN = require('./intent_main');
+const get_Cafe = require('./menu_get')
 // load Suggestions Button
 
 module.exports = (conv, input) => {
@@ -25,58 +26,20 @@ module.exports = (conv, input) => {
         intent_MAIN(conv)
     }
     else if(caf.ALLCAFE.includes(input)){
-        conv.ask(input + " 메뉴를 알려드리겠습니다.")
-        conv.ask(new Table({
-            title: input + ' 메뉴',
-            subtitle: '<오늘 날짜>',
-            image: new Image({
-              url: 'https://user-images.githubusercontent.com/4939738/51440015-3c95c100-1d05-11e9-8f86-30c5ccd0b45f.jpg',
-              alt: 'Meal'
-            }),
-            columns: [
-              {
-                header: '메뉴 1',
-                align: 'CENTER',
-              },
-              {
-                header: '메뉴 2',
-                align: 'CENTER',
-              },
-              {
-                header: '메뉴 3',
-                align: 'CENTER',
-              },
-            ],
-            //dividerAfter는 어시스턴트의 테이블에서 cells다음에 나올 line을 의미
-            rows: [
-              {
-                cells: ['순두부찌개', '된장찌개', '뭔지 모를 제육볶음'],
-                dividerAfter: false,
-              },
-              {
-                cells: ['순대 간포함', '김말이', '떡볶이'],
-                dividerAfter: true,
-              },
-              {
-                cells: ['순대 간포함', '김말이', '떡볶이'],
-                dividerAfter: true,
-              },
-              {
-                cells: ['순대 간포함', '폴스->', '디바이드애프터'],
-                dividerAfter: false,
-              },
-              {
-                cells: ['3000원', '1500원', '2700원'],
-              },
-            ],
-          }))
-          
-          if (conv.user.storage.campus == 'global') {
-            conv.ask(caf.GLOBAL_CAFE)
-          }
-          else {
-            conv.ask(caf.SEOUL_CAFE)
-          }
+        var cafe_name = null
+        if(input == '후생관'){
+            cafe_name = 'hooseng'
+        }
+        else if(input == '어문관'){
+            cafe_name = 'umoon'
+        }
+        //console.log(input)
+        console.log(cafe_name)
+
+
+        get_Cafe(conv, cafe_name)
+        intent_MAIN(conv)
+
           
     }
     else {
@@ -87,6 +50,7 @@ module.exports = (conv, input) => {
   }
   catch(e) {
     conv.ask('오류가 났어요! 개발자에게 알려주세요')
+    console.log(e)
     conv.ask(e)
   }
 }
