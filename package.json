@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "node index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "Aaron Roh",
   "license": "MIT",
@@ -14,6 +16,8 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "request": "^2.88.0",
-    "sync-request": "^6.0.0"
-  }
+    "sync-request": "^6.0.0",
+    "snyk": "^1.230.5"
+  },
+  "snyk": true
 }
